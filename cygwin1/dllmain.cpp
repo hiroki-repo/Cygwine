@@ -3,7 +3,6 @@
 #include "windows.h"
 #include "subauth.h"
 #include <stdlib.h>
-#include "winternl.h"
 #include <malloc.h>
 
 #ifdef _WIN64
@@ -268,9 +267,6 @@ extern "C" {
     __declspec(dllexport) UNATIVE getpeername(int which, void* value) {
         return _UnixSyscallHandler(__NR_getpeername, (UNATIVE)which, (UNATIVE)value, 0, 0, 0, 0);
     }
-    __declspec(dllexport) UNATIVE getgroups(int gidsetsize, void* grouplist) {
-        return _UnixSyscallHandler(__NR_getpeername, (UNATIVE)gidsetsize, (UNATIVE)grouplist, 0, 0, 0, 0);
-    }
     __declspec(dllexport) UNATIVE getpgid(UNATIVE pid) {
         return _UnixSyscallHandler(__NR_getpgid, (UNATIVE)pid, 0, 0, 0, 0, 0);
     }
@@ -470,13 +466,6 @@ extern "C" {
     __declspec(dllexport) UNATIVE readlinkat(int dfd, void* path, void* buf, int bufsiz) {
         return _UnixSyscallHandler(__NR_readlinkat, dfd, (UNATIVE)path, (UNATIVE)buf, bufsiz, 0, 0);
     }
-    __declspec(dllexport) UNATIVE unlink(const char* pathname) {
-#ifndef __NR_unlink
-        return _UnixSyscallHandler(__NR_unlinkat, -100, (UNATIVE)pathname, 0, 0, 0, 0);
-#else
-        return _UnixSyscallHandler(__NR_unlink, (UNATIVE)pathname, 0, 0, 0, 0, 0);
-#endif
-    }
     __declspec(dllexport) UNATIVE unlinkat(int dfd, void* pathname, int flag) {
         return _UnixSyscallHandler(__NR_unlinkat, dfd, (UNATIVE)pathname, flag, 0, 0, 0);
     }
@@ -504,7 +493,7 @@ extern "C" {
 /* Cygwin replacement for GetCommandLineW.  Returns a concatenated wide string
    representing the argv list, constructed using roughly the same mechanism as
    child_info_spawn::worker */
-extern "C" __declspec(dllexport) LPWSTR WINAPI GetCommandLineW(void)
+extern "C" LPWSTR __stdcall GetCommandLineW(void)
 {
     return Win32_GetCommandLineW();
 }
@@ -512,7 +501,7 @@ extern "C" __declspec(dllexport) LPWSTR WINAPI GetCommandLineW(void)
 /* Cygwin replacement for GetCommandLineA.  Returns a concatenated string
    representing the argv list, constructed using roughly the same mechanism
    as child_info_spawn::worker */
-extern "C" __declspec(dllexport) LPSTR WINAPI GetCommandLineA(void)
+extern "C" LPSTR __stdcall GetCommandLineA(void)
 {
     return Win32_GetCommandLineA();
 }

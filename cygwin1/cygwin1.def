@@ -1,0 +1,3 @@
+EXPORTS
+ GetCommandLineW@0 = _GetCommandLineW@0
+ GetCommandLineA@0 = _GetCommandLineA@0
