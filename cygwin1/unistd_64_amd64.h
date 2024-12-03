@@ -661,6 +661,88 @@ __SYSCALL(__NR_pwritev, sys_pwritev)
 __SYSCALL(__NR_rt_tgsigqueueinfo, sys_rt_tgsigqueueinfo)
 #define __NR_perf_event_open			298
 __SYSCALL(__NR_perf_event_open, sys_perf_event_open)
+#define __NR_recvmmsg				299
+__SYSCALL(__NR_recvmmsg, sys_recvmmsg)
+#define __NR_fanotify_init			300
+__SYSCALL(__NR_fanotify_init, sys_fanotify_init)
+#define __NR_fanotify_mark			301
+__SYSCALL(__NR_fanotify_mark, sys_fanotify_mark)
+#define __NR_prlimit64				302
+__SYSCALL(__NR_prlimit64, sys_prlimit64)
+#define __NR_name_to_handle_at			303
+__SYSCALL(__NR_name_to_handle_at, sys_name_to_handle_at)
+#define __NR_open_by_handle_at			304
+__SYSCALL(__NR_open_by_handle_at, sys_open_by_handle_at)
+#define __NR_clock_adjtime			305
+__SYSCALL(__NR_clock_adjtime, sys_clock_adjtime)
+#define __NR_syncfs				306
+__SYSCALL(__NR_syncfs, sys_syncfs)
+#define __NR_sendmmsg				307
+__SYSCALL(__NR_sendmmsg, sys_sendmmsg)
+#define __NR_setns				308
+__SYSCALL(__NR_setns, sys_setns)
+#define __NR_getcpu				309
+__SYSCALL(__NR_getcpu, sys_getcpu)
+#define __NR_process_vm_readv			310
+__SYSCALL(__NR_process_vm_readv, sys_process_vm_readv)
+#define __NR_process_vm_writev			311
+__SYSCALL(__NR_process_vm_writev, sys_process_vm_writev)
+#define __NR_kcmp				312
+__SYSCALL(__NR_kcmp, sys_kcmp)
+#define __NR_finit_module			313
+__SYSCALL(__NR_finit_module, sys_finit_module)
+#define __NR_sched_setattr			314
+__SYSCALL(__NR_sched_setattr, sys_sched_setattr)
+#define __NR_sched_getattr			315
+__SYSCALL(__NR_sched_getattr, sys_sched_getattr)
+#define __NR_renameat2				316
+__SYSCALL(__NR_renameat2, sys_renameat2)
+#define __NR_seccomp				317
+__SYSCALL(__NR_seccomp, sys_seccomp)
+#define __NR_getrandom				318
+__SYSCALL(__NR_getrandom, sys_getrandom)
+#define __NR_memfd_create			319
+__SYSCALL(__NR_memfd_create, sys_memfd_create)
+#define __NR_kexec_file_load			320
+__SYSCALL(__NR_kexec_file_load, sys_kexec_file_load)
+#define __NR_bpf				321
+__SYSCALL(__NR_bpf, sys_bpf)
+#define __NR_execveat				322
+__SYSCALL(__NR_execveat, sys_execveat)
+#define __NR_userfaultfd			323
+__SYSCALL(__NR_userfaultfd, sys_userfaultfd)
+#define __NR_membarrier				324
+__SYSCALL(__NR_membarrier, sys_membarrier)
+#define __NR_mlock2				325
+__SYSCALL(__NR_mlock2, sys_mlock2)
+#define __NR_copy_file_range			326
+__SYSCALL(__NR_copy_file_range, sys_copy_file_range)
+#define __NR_preadv2				327
+__SYSCALL(__NR_preadv2, sys_preadv2)
+#define __NR_pwritev2				328
+__SYSCALL(__NR_pwritev2, sys_pwritev2)
+#define __NR_pkey_mprotect			329
+__SYSCALL(__NR_pkey_mprotect, sys_pkey_mprotect)
+#define __NR_pkey_alloc				330
+__SYSCALL(__NR_pkey_alloc, sys_pkey_alloc)
+#define __NR_pkey_free				331
+__SYSCALL(__NR_pkey_free, sys_pkey_free)
+#define __NR_statx				332
+__SYSCALL(__NR_statx, sys_statx)
+#define __NR_rseq				334
+__SYSCALL(__NR_rseq, sys_rseq)
+#define __NR_io_uring_setup			425
+__SYSCALL(__NR_io_uring_setup, sys_io_uring_setup)
+#define __NR_io_uring_enter			426
+__SYSCALL(__NR_io_uring_enter, sys_io_uring_enter)
+#define __NR_pidfd_open				434
+__SYSCALL(__NR_pidfd_open, sys_pidfd_open)
+#define __NR_clone3				435
+__SYSCALL(__NR_clone3, sys_clone3)
+#define __NR_close_range			436
+__SYSCALL(__NR_close_range, sys_close_range)
+#define __NR_faccessat2				439
+__SYSCALL(__NR_faccessat2, sys_faccessat2)
 
 #ifndef __NO_STUBS
 #define __ARCH_WANT_OLD_READDIR

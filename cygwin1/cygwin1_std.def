@@ -96,3 +96,7 @@ EXPORTS
  atanh = _atanh
  atof = _atof
  _atof_l = __atof_l
+
+ GetCommandLineW@0 = _GetCommandLineW@0
+ GetCommandLineA@0 = _GetCommandLineA@0
+
